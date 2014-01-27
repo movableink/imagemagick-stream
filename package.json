@@ -1,0 +1,31 @@
+{
+  "name": "imagemagick-stream",
+  "version": "0.0.3",
+  "description": "Streaming Imagemagick api",
+  "keywords": [
+    "stream",
+    "imagemagick",
+    "thumbnail"
+  ],
+  "author": {
+    "name": "Eivind Fjeldstad"
+  },
+  "dependencies": {
+    "readable-stream": "1.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eivindfjeldstad/imagemagick-stream.git"
+  },
+  "readme": "# imagemagick-stream\n\nStreaming imagemagick api\n\n## Use\n    $ npm install imagemagick-stream\n\n```js\nvar im = require('imagemagick-stream');\nvar in = fs.createReadStream('image.png');\nvar out = fs.createWriteStream('image-resized.png');\n  \nvar resize = im().resize('200x200').quality(90);\n\nin.pipe(resize).pipe(out);\n  \n// Alternatively\nim('image.png')\n  .resize('200x200')\n  .quality(90)\n  .pipe(out);\n  \n// Or\nim('image.png')\n  .resize('200x200')\n  .quality(90)\n  .to('image-resized.png');\n```\n\n## Todo\n- More options\nAdded \n.imagetype(type)\n.autorotate(true)\n## License \n\nMIT\n",
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/eivindfjeldstad/imagemagick-stream/issues"
+  },
+  "_id": "imagemagick-stream@0.0.3",
+  "dist": {
+    "shasum": "ac1c28c0eee2b7b8f2e4b73a3a68034263c1ae40"
+  },
+  "_resolved": "git://github.com/No9/imagemagick-stream.git#d89ed96d08121c0343c4ebf33d17a22df221c8ad",
+  "_from": "imagemagick-stream@git://github.com/No9/imagemagick-stream.git#preprocess-0.2"
+}
